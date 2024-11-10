@@ -196,6 +196,25 @@ ROC AUC scores range between 0.638 (Decision Tree) and 0.836 (Naive Bayes). This
 Overall, Naive Bayes and Logistic Regression show the best balance between capturing stroke cases and maintaining a reasonable ROC AUC, making them potentially more suitable for this imbalanced dataset.
 
 #### Random Undersampling:
+| Model                        | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score |
+|------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression          | 0.728    | 0.98          | 0.15          | 0.72       | 0.77       | 0.83         | 0.26         | 0.846         |
+| Random Forest                | 0.713    | 0.98          | 0.15          | 0.71       | 0.79       | 0.82         | 0.25         | 0.824         |
+| Support Vector Machine       | 0.696    | 0.98          | 0.14          | 0.69       | 0.81       | 0.81         | 0.24         | 0.824         |
+| Gradient Boosting            | 0.703    | 0.97          | 0.13          | 0.70       | 0.69       | 0.82         | 0.22         | 0.813         |
+| AdaBoost                     | 0.713    | 0.98          | 0.14          | 0.71       | 0.73       | 0.82         | 0.23         | 0.764         |
+| XGBoost                      | 0.710    | 0.98          | 0.15          | 0.71       | 0.79       | 0.82         | 0.25         | 0.816         |
+| LightGBM                     | 0.704    | 0.98          | 0.14          | 0.70       | 0.74       | 0.82         | 0.23         | 0.821         |
+| CatBoost                     | 0.725    | 0.98          | 0.15          | 0.72       | 0.79       | 0.83         | 0.26         | 0.842         |
+| k-Nearest Neighbors          | 0.678    | 0.98          | 0.14          | 0.67       | 0.81       | 0.80         | 0.23         | 0.778         |
+| Decision Tree                | 0.680    | 0.98          | 0.13          | 0.68       | 0.74       | 0.80         | 0.22         | 0.709         |
+| Naive Bayes                  | 0.725    | 0.98          | 0.15          | 0.72       | 0.77       | 0.83         | 0.25         | 0.832         |
+| Linear Discriminant Analysis | 0.725    | 0.98          | 0.15          | 0.72       | 0.79       | 0.83         | 0.26         | 0.848         |
+| Quadratic Discriminant Analysis | 0.729 | 0.98          | 0.15          | 0.73       | 0.77       | 0.83         | 0.26         | 0.833         |
+| Extra Trees                  | 0.697    | 0.98          | 0.14          | 0.69       | 0.81       | 0.81         | 0.24         | 0.804         |
+
+**Observations of Performance on each model after Random Undersampling:**
+**Summary of Performance  on each model after Random Undersampling:**
 #### NearMiss-1:
 #### NearMiss-2:
 #### NearMiss-3:
