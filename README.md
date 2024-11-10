@@ -214,8 +214,21 @@ Overall, Naive Bayes and Logistic Regression show the best balance between captu
 | Extra Trees                  | 0.697    | 0.98          | 0.14          | 0.69       | 0.81       | 0.81         | 0.24         | 0.804         |
 
 **Observations of Performance on each model after Random Undersampling:**
+Accuracy values range from 67.8% (k-Nearest Neighbors) to 72.9% (Quadratic Discriminant Analysis), with most models achieving around 70-73%. However, since accuracy is influenced by the dominant class, it’s not the most reliable indicator for imbalanced datasets.
+
+Precision for the non-stroke class (0) is consistently high across models, close to 0.98. This indicates that when these models predict a non-stroke case, they are usually correct, reflecting the strong performance of models on the majority class. Precision for the stroke class (1) is relatively low across all models, around 0.13-0.15. This low precision indicates a high rate of false positives when predicting strokes, meaning models often incorrectly classify non-stroke cases as strokes.
+
+Recall for non-stroke cases is fairly high across all models, ranging from 0.67 to 0.73. This suggests that most non-stroke cases are correctly identified, though a few false negatives still occur. Recall for the stroke class (1) is higher than precision, with most models achieving around 0.73 to 0.81. This higher recall suggests that the models are identifying a majority of true stroke cases but with some false positives, leading to lower precision.
+Quadratic Discriminant Analysis, Logistic Regression, and CatBoost achieved the highest recall scores (~0.77-0.81), making them slightly better for stroke detection compared to other models.
+
+The F1-scores for non-stroke cases are consistently high (around 0.80 to 0.83), indicating a good balance between precision and recall for this class. The F1-scores for stroke cases are low across all models (around 0.22 to 0.26). This low F1-score for the minority class suggests that, despite improvements in recall, models still struggle to achieve high precision and recall simultaneously for stroke cases.
+
+The ROC AUC scores range from 0.709 (Decision Tree) to 0.848 (Linear Discriminant Analysis), indicating variability in the models' ability to distinguish between stroke and non-stroke cases. Logistic Regression, CatBoost, Linear Discriminant Analysis, and Quadratic Discriminant Analysis exhibit higher ROC AUC scores (around 0.83 to 0.85), making them the most effective at differentiating between stroke and non-stroke cases after RandomUnderSampler.
 
 **Summary of Performance  on each model after Random Undersampling:**
+- Logistic Regression, Linear Discriminant Analysis, Quadratic Discriminant Analysis, and CatBoost show relatively balanced performance after RandomUnderSampler, achieving higher accuracy, recall, and ROC AUC scores for stroke cases than other models.
+- Low Precision for Stroke Prediction: While recall for stroke cases has improved, precision remains low, suggesting that models are prone to false positives. This trade-off indicates that the models are tuned towards identifying stroke cases (high recall) but struggle with false alarms.
+- Overall Effectiveness of RandomUnderSampler: RandomUnderSampler has helped models achieve better recall and AUC scores for stroke cases, yet further improvements are needed to increase precision. This method can serve as a preliminary technique for balancing data, but additional fine-tuning, possibly combining it with other sampling techniques or model adjustments, would enhance stroke detection.
 
 #### NearMiss-1:
 #### NearMiss-2:
