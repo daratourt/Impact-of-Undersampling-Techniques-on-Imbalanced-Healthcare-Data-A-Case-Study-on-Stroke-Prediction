@@ -214,7 +214,9 @@ Overall, Naive Bayes and Logistic Regression show the best balance between captu
 | Extra Trees                  | 0.697    | 0.98          | 0.14          | 0.69       | 0.81       | 0.81         | 0.24         | 0.804         |
 
 **Observations of Performance on each model after Random Undersampling:**
+
 **Summary of Performance  on each model after Random Undersampling:**
+
 #### NearMiss-1:
 #### NearMiss-2:
 #### NearMiss-3:
