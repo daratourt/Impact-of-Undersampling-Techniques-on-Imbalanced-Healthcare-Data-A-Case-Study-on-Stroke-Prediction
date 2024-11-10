@@ -111,7 +111,7 @@ The following evaluation metrics were used in this study:
 - Accuracy
   - Powers, D. M. W. (2011). Evaluation: From precision, recall, and F-measure to ROC, informedness, markedness, and correlation. *Journal of Machine Learning Technologies, 2*(1), 37–63. https://www.researchgate.net/publication/281917226
 - Precision, Recall, and F1-Score
-  -Powers, D. M. W. (2011). Evaluation: From precision, recall, and F-measure to ROC, informedness, markedness, and correlation. *Journal of Machine Learning Technologies, 2*(1), 37–63. https://www.researchgate.net/publication/281917226
+  - Powers, D. M. W. (2011). Evaluation: From precision, recall, and F-measure to ROC, informedness, markedness, and correlation. *Journal of Machine Learning Technologies, 2*(1), 37–63. https://www.researchgate.net/publication/281917226
 - ROC AUC Score
   - Hanley, J. A., & McNeil, B. J. (1982). The meaning and use of the area under a receiver operating characteristic (ROC) curve. *Radiology, 143*(1), 29–36. https://doi.org/10.1148/radiology.143.1.7063747
   - Fawcett, T. (2006). An introduction to ROC analysis. *Pattern Recognition Letters, 27*(8), 861–874. https://doi.org/10.1016/j.patrec.2005.10.010
@@ -123,13 +123,74 @@ The table below summarizes the performance of various machine learning models wh
 
 | Model                        | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score |
 |------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|----------------|
-| Logistic Regression          | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.851          |
-| Random Forest                | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.797          |
-| Support Vector Machine       | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.628          |
-| Gradient Boosting            | 0.938    | 0.94          | 0.33          | 1.00       | 0.02       | 0.97         | 0.03         | 0.835          |
-| AdaBoost                     | 0.937    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.793          |
-| k-Nearest Neighbors          | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.647          |
-| Decision Tree                | 0.920    | 0.95          | 0.27          | 0.97       | 0.19       | 0.96         | 0.23         | 0.580          |
-| Naive Bayes                  | 0.867    | 0.96          | 0.22          | 0.89       | 0.47       | 0.93         | 0.30         | 0.829          |
-| Linear Discriminant Analysis | 0.934    | 0.94          | 0.27          | 0.99       | 0.05       | 0.97         | 0.08         | 0.842          |
-| Quadratic Discriminant Analysis | 0.880 | 0.96          | 0.24          | 0.91       | 0.45       | 0.93         | 0.31         | 0.830          |
+| Logistic Regression          | 0.94    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.851          |
+| Random Forest                | 0.94    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.797          |
+| Support Vector Machine       | 0.94    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.628          |
+| Gradient Boosting            | 0.94    | 0.94          | 0.33          | 1.00       | 0.02       | 0.97         | 0.03         | 0.835          |
+| XGBoost                      | 0.94     | 0.94          | 0.50          | 0.99       | 0.10       | 0.97         | 0.16         |  0.796         |
+| AdaBoost                     | 0.94     | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.793          |
+| LightGBM                     | 0.94     | 0.94          | 0.33          | 0.99       | 0.06       | 0.97         | 0.11         | 0.817          |
+| CatBoost                     | 0.94     |0.94           |0.67           |1.00        |0.03        |0.97          |0.06          | 0.819          |
+| K-Nearest Neighbors          | 0.94    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.647          |
+| Decision Tree                | 0.92    | 0.95          | 0.27          | 0.97       | 0.19       | 0.96         | 0.23         | 0.580          |
+| Naive Bayes                  | 0.87    | 0.96          | 0.22          | 0.89       | 0.47       | 0.93         | 0.30         | 0.829          |
+| Linear Discriminant Analysis | 0.93    | 0.94          | 0.27          | 0.99       | 0.05       | 0.97         | 0.08         | 0.842          |
+| Quadratic Discriminant Analysis | 0.88 | 0.96          | 0.24          | 0.91       | 0.45       | 0.93         | 0.31         | 0.830          |
+|  Extra Trees                 | 0.94     | 0.94          | 0.29          | 0.99       | 0.03       | 0.97         | 0.06         | 0.776          |
+
+**Observations of Performance on Imbalanced Data:**
+
+Most models achieve high accuracy (around 93-94%). However, accuracy alone is misleading for imbalanced data, as it can be high even when the model fails to predict the minority class (stroke cases) effectively.
+
+Precision (0) and Recall (0) are consistently high across all models, close to or at 1.00. This indicates that the models are highly accurate in identifying non-stroke cases and have a very low rate of false positives for the majority class.Precision (1) and Recall (1) vary significantly across models, generally indicating poor performance in identifying stroke cases.
+
+Many models, such as Logistic Regression, Random Forest, SVM, and AdaBoost, have Precision (1) and Recall (1) of 0.00. This means these models are entirely missing the minority class, predicting no stroke cases.Some models like XGBoost, LightGBM, CatBoost, Decision Tree, and Naive Bayes show slightly better performance on stroke cases but still have low recall, indicating high false negatives.
+
+F1-scores for class 1 are very low across all models, indicating an overall weak performance in capturing stroke cases. This low F1-score shows that even when some models have non-zero precision and recall for stroke, their balance between precision and recall is still poor. 
+
+The ROC AUC score varies significantly, with Logistic Regression achieving the highest score (0.851), indicating relatively better discrimination between the classes than other models.Models like Support Vector Machine, Decision Tree, K-Nearest Neighbors, and Extra Trees have notably lower AUC scores, suggesting limited ability to distinguish between stroke and non-stroke cases.
+
+**Summary of Performance on Imbalanced Data:**
+- High Bias towards the Majority Class: Most models have high accuracy and perfect recall for non-stroke cases but perform poorly for stroke prediction, highlighting the challenge of imbalanced data.
+- Poor Recall for Stroke (Class 1): Low recall for the minority class (stroke) in most models indicates a high number of false negatives, meaning many true stroke cases are not identified by the models.
+- Best Models for Minority Class (Class 1): Among all models, CatBoost and XGBoost have the highest Precision (1) values (0.67 and 0.50, respectively), suggesting they are the least likely to falsely predict stroke cases. Naive Bayes and Quadratic Discriminant Analysis also show better performance with slightly higher recall and F1-scores for class 1.
+- Recommendation: For a more effective stroke prediction model, focus on models like Logistic Regression and CatBoost, which show relatively higher AUC scores. However, further adjustments, such as using undersampling class balancing techniques, are recommended to improve recall for stroke cases.
+
+### Performce on undersampled datasets
+Below are the results of each undersampling technique:
+#### ClusterCentroids
+| Model                        | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score |
+|------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression          | 0.744    | 0.98          | 0.16          | 0.74       | 0.73       | 0.85         | 0.26         | 0.831         |
+| Random Forest                | 0.440    | 0.99          | 0.09          | 0.41       | 0.95       | 0.58         | 0.17         | 0.792         |
+| Support Vector Machine       | 0.733    | 0.98          | 0.15          | 0.73       | 0.73       | 0.84         | 0.25         | 0.815         |
+| Gradient Boosting            | 0.321    | 1.00          | 0.08          | 0.28       | 1.00       | 0.43         | 0.15         | 0.809         |
+| AdaBoost                     | 0.355    | 1.00          | 0.09          | 0.31       | 1.00       | 0.48         | 0.16         | 0.815         |
+| XGBoost                      | 0.424    | 1.00          | 0.09          | 0.39       | 0.98       | 0.56         | 0.17         | 0.806         |
+| LightGBM                     | 0.343    | 1.00          | 0.08          | 0.30       | 1.00       | 0.46         | 0.16         | 0.809         |
+| CatBoost                     | 0.403    | 1.00          | 0.09          | 0.36       | 1.00       | 0.53         | 0.17         | 0.814         |
+| k-Nearest Neighbors          | 0.746    | 0.97          | 0.15          | 0.75       | 0.68       | 0.85         | 0.24         | 0.745         |
+| Decision Tree                | 0.392    | 0.99          | 0.08          | 0.36       | 0.92       | 0.53         | 0.16         | 0.639         |
+| Naive Bayes                  | 0.682    | 0.98          | 0.14          | 0.67       | 0.84       | 0.80         | 0.24         | 0.836         |
+| Linear Discriminant Analysis | 0.732    | 0.98          | 0.15          | 0.73       | 0.76       | 0.84         | 0.26         | 0.830         |
+| Quadratic Discriminant Analysis | 0.684 | 0.99          | 0.14          | 0.67       | 0.85       | 0.80         | 0.25         | 0.830         |
+| Extra Trees                  | 0.545    | 0.99          | 0.11          | 0.52       | 0.90       | 0.68         | 0.19         | 0.796         |
+
+**Observations of Performance on each model after ClusterCentroids:**
+
+The accuracy scores are highly variable, ranging from 32% (Gradient Boosting) to 75% (k-Nearest Neighbors).While Logistic Regression, Support Vector Machine, k-Nearest Neighbors, and Naive Bayes show relatively higher accuracy (~70% or more), accuracy alone can be misleading in imbalanced data, as it might not reflect the model’s ability to identify the minority class (stroke cases).
+
+Most models show very high precision for the non-stroke class, close to 1.00. This means that when the model predicts a case as non-stroke, it is usually correct.
+Models like Gradient Boosting, AdaBoost, XGBoost, LightGBM, and CatBoost achieve a perfect 1.00 precision for Class 0, indicating a strong ability to correctly identify non-stroke cases with minimal false positives.Precision for the minority class (stroke) is generally low across models, with only Logistic Regression (0.16), Naive Bayes (0.14), and Quadratic Discriminant Analysis (0.14) showing slightly higher values.The low precision in most models (often around 0.08 to 0.15) indicates that when these models predict a stroke, many of those predictions are false positives, reducing the model’s reliability for stroke prediction.
+
+Recall values for Class 0 are consistently high, especially for Logistic Regression, SVM, and Naive Bayes, indicating that these models are very effective in capturing non-stroke cases.The recall for non-stroke cases reaches 0.98 to 1.00 in most models, showing that non-stroke cases are almost always identified correctly. Logistic Regression, Naive Bayes, and Quadratic Discriminant Analysis achieve higher recall values for stroke cases (around 0.73 to 0.85), indicating that these models are better at identifying actual stroke cases compared to other models.However, models like Gradient Boosting, AdaBoost, and LightGBM reach 1.00 recall for stroke cases, but this is likely due to predicting nearly all cases as strokes, which explains their low accuracy.
+
+The F1-scores for the non-stroke class are consistently high, with most models achieving around 0.80 to 0.85, indicating balanced precision and recall for this class. The F1-score for the stroke class is low across all models, with Logistic Regression, SVM, Naive Bayes, and Quadratic Discriminant Analysis showing slightly higher F1-scores (~0.24 to 0.26).These low F1-scores indicate that despite some improvements in recall, the models still struggle to achieve a good balance between precision and recall for predicting strokes.
+
+ROC AUC scores range between 0.638 (Decision Tree) and 0.836 (Naive Bayes). This metric indicates how well the model distinguishes between classes, with higher scores showing better class separation. Logistic Regression, Naive Bayes, and Quadratic Discriminant Analysis have relatively higher ROC AUC scores (above 0.82), suggesting they are slightly better at distinguishing stroke cases from non-stroke cases.
+
+**Summary of Performance  on each model after ClusterCentroids:**
+
+- Logistic Regression, Naive Bayes, and Quadratic Discriminant Analysis show relatively better performance after applying ClusterCentroids, with higher recall for the stroke class and balanced performance across metrics. Gradient Boosting, AdaBoost, and LightGBM achieve high recall for stroke cases but at the expense of accuracy and precision, suggesting they may over-predict strokes.
+- The ClusterCentroids undersampling technique helps achieve balanced recall across classes but often reduces precision for the minority class (stroke).
+Overall, Naive Bayes and Logistic Regression show the best balance between capturing stroke cases and maintaining a reasonable ROC AUC, making them potentially more suitable for this imbalanced dataset.
