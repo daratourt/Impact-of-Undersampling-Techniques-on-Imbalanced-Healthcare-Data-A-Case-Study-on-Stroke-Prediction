@@ -194,3 +194,22 @@ ROC AUC scores range between 0.638 (Decision Tree) and 0.836 (Naive Bayes). This
 - Logistic Regression, Naive Bayes, and Quadratic Discriminant Analysis show relatively better performance after applying ClusterCentroids, with higher recall for the stroke class and balanced performance across metrics. Gradient Boosting, AdaBoost, and LightGBM achieve high recall for stroke cases but at the expense of accuracy and precision, suggesting they may over-predict strokes.
 - The ClusterCentroids undersampling technique helps achieve balanced recall across classes but often reduces precision for the minority class (stroke).
 Overall, Naive Bayes and Logistic Regression show the best balance between capturing stroke cases and maintaining a reasonable ROC AUC, making them potentially more suitable for this imbalanced dataset.
+
+#### Random Undersampling:
+#### NearMiss-1:
+#### NearMiss-2:
+#### NearMiss-3:
+#### Tomek Links:
+#### Edited Nearest Neighbors (ENN):
+#### Repeated Edited Nearest Neighbors (RENN):
+#### All KNN:
+#### Condensed Nearest Neighbor (CNN):
+#### One-Sided Selection (OSS):
+#### Neighborhood Cleaning Rule (NCR):
+#### Instance Hardness Threshold:
+
+## Conclusion
+
+## Discussion
+
+## Future Work
