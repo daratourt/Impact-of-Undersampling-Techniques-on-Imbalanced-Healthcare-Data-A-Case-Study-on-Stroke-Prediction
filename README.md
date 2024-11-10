@@ -214,6 +214,7 @@ Overall, Naive Bayes and Logistic Regression show the best balance between captu
 | Extra Trees                  | 0.697    | 0.98          | 0.14          | 0.69       | 0.81       | 0.81         | 0.24         | 0.804         |
 
 **Observations of Performance on each model after Random Undersampling:**
+
 Accuracy values range from 67.8% (k-Nearest Neighbors) to 72.9% (Quadratic Discriminant Analysis), with most models achieving around 70-73%. However, since accuracy is influenced by the dominant class, it’s not the most reliable indicator for imbalanced datasets.
 
 Precision for the non-stroke class (0) is consistently high across models, close to 0.98. This indicates that when these models predict a non-stroke case, they are usually correct, reflecting the strong performance of models on the majority class. Precision for the stroke class (1) is relatively low across all models, around 0.13-0.15. This low precision indicates a high rate of false positives when predicting strokes, meaning models often incorrectly classify non-stroke cases as strokes.
