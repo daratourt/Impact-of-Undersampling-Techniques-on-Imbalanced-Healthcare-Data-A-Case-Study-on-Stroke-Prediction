@@ -47,7 +47,7 @@ Many healthcare datasets are imbalanced, leading to biased models that perform p
    
      **Source:** https://imbalanced-learn.org/stable/under_sampling.html
 
-4. **Model Training:** Training models on both the original and oversampled datasets.
+4. **Model Training:** Training models on both the original and undersampled datasets.
 5. **Evaluation:** Comparing model performance using accuracy, precision, recall, F1-score, and AUC-ROC.
 
 ## Models
