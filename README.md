@@ -387,6 +387,8 @@ F1-scores for Class 0 are generally high, around 0.94 to 0.97, indicating a bala
 
 The F1-scores for Class 1 remain low across all models, typically between 0.03 and 0.31.Linear Discriminant Analysis achieves the highest F1-score for stroke cases (0.31), suggesting it handles the minority class slightly better in terms of balance between precision and recall.
 
+ROC AUC scores range from 0.592 (Decision Tree) to 0.852 (Logistic Regression). Models such as Logistic Regression, Random Forest, and Gradient Boosting have the highest ROC AUC scores, indicating that these models perform better in distinguishing between the classes on the ENN-processed dataset.
+
 **Summary of Performance on each model after Edited Nearest Neighbors (ENN):**
 
 #### Repeated Edited Nearest Neighbors (RENN):
