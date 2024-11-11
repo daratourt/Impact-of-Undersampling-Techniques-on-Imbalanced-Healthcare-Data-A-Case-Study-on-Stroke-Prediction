@@ -352,7 +352,24 @@ ROC AUC scores vary from 0.55 to 0.85, with Logistic Regression achieving the hi
 - **High Precision and Recall for Non-Stroke Cases:** Models demonstrate consistently high performance for non-stroke cases in both precision and recall, resulting in high accuracy. This is a result of the dataset still being imbalanced after TomekLinks is applied, leading models to prioritize the majority class.
 - **Naive Bayes and Quadratic Discriminant Analysis Outperform in Minority Class Detection:** These models exhibit slightly higher recall and AUC scores for the minority class, suggesting they may better handle imbalanced data. However, precision for stroke cases is still low, indicating that these models, while more sensitive, are not without limitations.
 
-#### Edited Nearest Neighbors (ENN)::
+#### Edited Nearest Neighbors (ENN):
+| Model                         | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score |
+|-------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression           | 0.937    | 0.94          | 0.25          | 1.00       | 0.02       | 0.97         | 0.03         | 0.852         |
+| Random Forest                 | 0.938    | 0.94          | 0.45          | 0.99       | 0.08       | 0.97         | 0.14         | 0.813         |
+| SVM                           | 0.937    | 0.94          | 0.25          | 1.00       | 0.02       | 0.97         | 0.03         | 0.709         |
+| Gradient Boosting             | 0.937    | 0.95          | 0.44          | 0.99       | 0.11       | 0.97         | 0.18         | 0.851         |
+| AdaBoost                      | 0.937    | 0.94          | 0.40          | 0.99       | 0.06       | 0.97         | 0.11         | 0.839         |
+| XGBoost                       | 0.928    | 0.95          | 0.32          | 0.98       | 0.18       | 0.96         | 0.23         | 0.808         |
+| LightGBM                      | 0.931    | 0.94          | 0.30          | 0.98       | 0.11       | 0.96         | 0.16         | 0.840         |
+| CatBoost                      | 0.932    | 0.95          | 0.35          | 0.98       | 0.13       | 0.96         | 0.19         | 0.836         |
+| k-Nearest Neighbors           | 0.935    | 0.95          | 0.40          | 0.99       | 0.13       | 0.97         | 0.20         | 0.674         |
+| Decision Tree                 | 0.886    | 0.95          | 0.19          | 0.93       | 0.26       | 0.94         | 0.22         | 0.593         |
+| Naive Bayes                   | 0.845    | 0.97          | 0.20          | 0.87       | 0.53       | 0.91         | 0.29         | 0.825         |
+| Linear Discriminant Analysis  | 0.925    | 0.95          | 0.35          | 0.97       | 0.27       | 0.96         | 0.31         | 0.837         |
+| Quadratic Discriminant Analysis | 0.850  | 0.97          | 0.21          | 0.87       | 0.53       | 0.92         | 0.30         | 0.826         |
+| Extra Trees                   | 0.927    | 0.95          | 0.29          | 0.98       | 0.15       | 0.96         | 0.19         | 0.787         |
+
 **Observations of Performance on each model after Edited Nearest Neighbors (ENN):**
 
 **Summary of Performance on each model after Edited Nearest Neighbors (ENN):**
