@@ -372,6 +372,21 @@ ROC AUC scores vary from 0.55 to 0.85, with Logistic Regression achieving the hi
 
 **Observations of Performance on each model after Edited Nearest Neighbors (ENN):**
 
+Accuracy values are high across most models, ranging from 84.5% (Naive Bayes) to 93.8% (Random Forest, SVM, and Logistic Regression).
+Models such as Random Forest, SVM, and Logistic Regression demonstrate strong overall accuracy, suggesting that ENN has effectively improved these models' ability to handle class imbalance.
+
+Precision for the non-stroke class remains consistently high, generally around 0.94 to 0.97, reflecting the models' strength in correctly classifying the majority class. Naive Bayes and Quadratic Discriminant Analysis achieve the highest precision (0.97), highlighting their ability to accurately classify non-stroke cases in the ENN-processed dataset.
+
+Precision for the stroke class is generally low across models, with values ranging from 0.20 (Naive Bayes and Quadratic Discriminant Analysis) to 0.45 (Random Forest).This low precision for class 1 indicates that many models still have difficulty distinguishing stroke cases from non-stroke cases, even after undersampling with ENN.
+
+Recall for non-stroke cases is high across all models, typically between 0.87 and 1.00, with the majority of models achieving near-perfect recall. High recall for Class 0 indicates that models are capturing the majority of non-stroke cases effectively, aligning with ENN’s goal of maintaining reliable detection of the majority class.
+
+Recall for stroke cases varies more widely, with values from 0.02 (SVM) to 0.53 (Naive Bayes and Quadratic Discriminant Analysis). Naive Bayes and Quadratic Discriminant Analysis achieve the highest recall, suggesting these models are relatively better at identifying stroke cases, although they still suffer from some misclassifications.
+
+F1-scores for Class 0 are generally high, around 0.94 to 0.97, indicating a balance between precision and recall for the majority class. Logistic Regression, Random Forest, and Gradient Boosting demonstrate high F1-scores for the non-stroke class, showing they maintain a good balance between true positives and false positives.
+
+The F1-scores for Class 1 remain low across all models, typically between 0.03 and 0.31.Linear Discriminant Analysis achieves the highest F1-score for stroke cases (0.31), suggesting it handles the minority class slightly better in terms of balance between precision and recall.
+
 **Summary of Performance on each model after Edited Nearest Neighbors (ENN):**
 
 #### Repeated Edited Nearest Neighbors (RENN):
