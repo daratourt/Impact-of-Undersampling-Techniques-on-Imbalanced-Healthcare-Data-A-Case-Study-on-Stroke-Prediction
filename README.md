@@ -352,9 +352,10 @@ ROC AUC scores vary from 0.55 to 0.85, with Logistic Regression achieving the hi
 - **High Precision and Recall for Non-Stroke Cases:** Models demonstrate consistently high performance for non-stroke cases in both precision and recall, resulting in high accuracy. This is a result of the dataset still being imbalanced after TomekLinks is applied, leading models to prioritize the majority class.
 - **Naive Bayes and Quadratic Discriminant Analysis Outperform in Minority Class Detection:** These models exhibit slightly higher recall and AUC scores for the minority class, suggesting they may better handle imbalanced data. However, precision for stroke cases is still low, indicating that these models, while more sensitive, are not without limitations.
 
-#### Edited Nearest Neighbors (ENN):
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+#### Edited Nearest Neighbors (ENN)::
+**Observations of Performance on each model after Edited Nearest Neighbors (ENN):**
+
+**Summary of Performance on each model after Edited Nearest Neighbors (ENN):**
 
 #### Repeated Edited Nearest Neighbors (RENN):
 **Observations of Performance on each model after :**
