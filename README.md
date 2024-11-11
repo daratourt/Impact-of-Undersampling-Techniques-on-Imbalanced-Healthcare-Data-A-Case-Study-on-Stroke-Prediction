@@ -358,28 +358,34 @@ ROC AUC scores vary from 0.55 to 0.85, with Logistic Regression achieving the hi
 **Summary of Performance on each model after Edited Nearest Neighbors (ENN):**
 
 #### Repeated Edited Nearest Neighbors (RENN):
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+**Observations of Performance on each model after Repeated Edited Nearest Neighbors (RENN):**
+
+**Summary of Performance on each model after Repeated Edited Nearest Neighbors (RENN):**
 
 #### All KNN:
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+**Observations of Performance on each model after All KNN:**
+
+**Summary of Performance on each model after All KNN:**
 
 #### Condensed Nearest Neighbor (CNN):
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+**Observations of Performance on each model after Condensed Nearest Neighbor (CNN):**
+
+**Summary of Performance on each model after Condensed Nearest Neighbor (CNN):**
 
 #### One-Sided Selection (OSS):
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+**Observations of Performance on each model after One-Sided Selection (OSS):**
+
+**Summary of Performance on each model after One-Sided Selection (OSS):**
 
 #### Neighborhood Cleaning Rule (NCR):
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+**Observations of Performance on each model after Neighborhood Cleaning Rule (NCR):**
+
+**Summary of Performance on each model after Neighborhood Cleaning Rule (NCR):**
 
 #### Instance Hardness Threshold:
-**Observations of Performance on each model after :**
-**Summary of Performance on each model after :**
+**Observations of Performance on each model after Instance Hardness Threshold:**
+
+**Summary of Performance on each model after Instance Hardness Threshold:**
 
 
 ## Conclusion
