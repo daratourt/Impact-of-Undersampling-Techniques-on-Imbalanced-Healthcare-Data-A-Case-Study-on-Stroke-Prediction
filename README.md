@@ -77,7 +77,7 @@ The following evaluation metrics were used in this study:
    - The ROC curve plots the true positive rate (recall) against the false positive rate (1 - specificity). The AUC score indicates how well the model distinguishes between the classes. A score of 1 indicates perfect discrimination, while a score of 0.5 indicates no discrimination (random guessing).
 
 ## Results
-The results section will detail the performance of models on both the imbalanced and oversampled datasets.
+The results section will detail the performance of models on both the imbalanced and undersampled datasets.
 ### Performance on Imbalanced Data
 The table below summarizes the performance of various machine learning models when trained on the imbalanced stroke dataset:
 
